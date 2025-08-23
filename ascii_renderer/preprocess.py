@@ -1,11 +1,9 @@
 from PIL import Image
 
 
-def to_grayscale(img):
-    """Converts an image to grayscale"""
-    return img.convert("L")
-
-
-def resize_img(img, size):
-    """Resizes an image"""
-    return img.resize(size)
+def preprocess_img(img, size):
+    # convert to grayscale
+    processed_img = img.convert("L")
+    # resize image
+    processed_img = processed_img.resize(size)
+    return processed_img
